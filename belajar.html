@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pembelajaran HistPath</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="navbar">
+  <h1>HistPath Learning</h1>
+</header>
+
+<div class="lms-container">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <h3>📚 Daftar Bab</h3>
+
+    <ul>
+      <li onclick="showContent('bab1')">Bab 1: Pengenalan</li>
+      <li onclick="showContent('bab2')">Bab 2: Biografi</li>
+      <li onclick="showContent('bab3')">Bab 3: Keteladanan</li>
+      <li onclick="showContent('quiz')">Latihan Soal</li>
+    </ul>
+  </aside>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="content">
+
+    <!-- ===== BAB 1 ===== -->
+    <div id="bab1" class="content-section active">
+      <h2>Pengenalan Khulafaur Rasyidin</h2>
+
+      <h3>A. Pengertian</h3>
+      <p>
+        Khulafaur Rasyidin adalah para pemimpin umat Islam setelah Nabi Muhammad SAW wafat.
+        Kata khalifah berarti pengganti atau pemimpin.
+      </p>
+
+      <p>
+        Mereka terdiri dari:
+      </p>
+      <ul>
+        <li>Abu Bakar Ash-Siddiq</li>
+        <li>Umar bin Khattab</li>
+        <li>Utsman bin Affan</li>
+        <li>Ali bin Abi Thalib</li>
+      </ul>
+
+      <p>
+        Kepemimpinan mereka dikenal sebagai masa terbaik dalam sejarah Islam karena:
+      </p>
+      <ul>
+        <li>Berpegang pada Al-Qur'an dan Hadis</li>
+        <li>Mengutamakan musyawarah</li>
+        <li>Adil dan jujur</li>
+        <li>Sederhana</li>
+      </ul>
+
+      <h3>B. Arti Rasyidin</h3>
+      <p>
+        Rasyidin berarti orang yang mendapat petunjuk dari Allah SWT.
+        Para khalifah menjadi teladan dalam kehidupan sehari-hari.
+      </p>
+
+      <img src="https://i.ibb.co.com/LdZ2VbGh/bagan.jpg" alt="Ilustrasi Khulafaur Rasyidin">
+
+    </div>
+
+    <!-- ===== BAB 2 ===== -->
+    <div id="bab2" class="content-section">
+      <h2>Latar Belakang Kepemimpinan</h2>
+
+      <p>
+        Nabi Muhammad SAW wafat pada tahun 632 M di Madinah.
+      </p>
+
+      <p>
+        Setelah wafatnya Nabi, umat Islam mengalami kesedihan dan kebingungan.
+        Abu Bakar menenangkan umat dengan menjelaskan bahwa Allah tetap hidup selamanya.
+      </p>
+
+      <p>
+        Para sahabat kemudian bermusyawarah dan memilih Abu Bakar sebagai khalifah pertama.
+      </p>
+
+      <h3>Tujuan Pemilihan Khalifah:</h3>
+      <ul>
+        <li>Menjaga persatuan umat</li>
+        <li>Melanjutkan ajaran Islam</li>
+        <li>Mengatur kehidupan masyarakat</li>
+        <li>Menghadapi tantangan</li>
+      </ul>
+
+      <!-- Video -->
+      <iframe width="100%" height="300"
+        src="https://www.youtube.com/embed/t6Ozu61yHts"
+        title="Video pembelajaran">
+      </iframe>
+
+    </div>
+
+    <!-- ===== BAB 3 ===== -->
+    <div id="bab3" class="content-section">
+      <h2>Nilai Keteladanan</h2>
+
+      <p>
+        Masa Khulafaur Rasyidin memberikan banyak pelajaran penting bagi umat Islam.
+      </p>
+
+      <ul>
+        <li>Kejujuran</li>
+        <li>Keadilan</li>
+        <li>Keberanian</li>
+        <li>Tanggung jawab</li>
+      </ul>
+
+      <p>
+        Nilai-nilai ini dapat diterapkan dalam kehidupan sehari-hari oleh peserta didik.
+      </p>
+    </div>
+
+    <!-- ===== QUIZ ===== -->
+    <div id="quiz" class="content-section">
+      <h2>Latihan Soal</h2>
+
+      <h3>Pilihan Ganda</h3>
+
+      <div class="quiz">
+        <p>1. Khulafaur Rasyidin adalah ...</p>
+        <button onclick="checkAnswer(this, true)">Pemimpin umat Islam setelah Nabi wafat</button>
+        <button onclick="checkAnswer(this, false)">Nabi sebelum Muhammad</button>
+      </div>
+
+      <div class="quiz">
+        <p>2. Arti khalifah adalah ...</p>
+        <button onclick="checkAnswer(this, true)">Pengganti atau pemimpin</button>
+        <button onclick="checkAnswer(this, false)">Guru agama</button>
+      </div>
+
+      <h3>Benar / Salah</h3>
+
+      <div class="quiz">
+        <p>Khulafaur Rasyidin memimpin sebelum Nabi Muhammad SAW</p>
+        <button onclick="checkAnswer(this, false)">Benar</button>
+        <button onclick="checkAnswer(this, true)">Salah</button>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+  // ================= NAVIGASI SIDEBAR =================
+  function showContent(id) {
+    document.querySelectorAll('.content-section').forEach(sec => {
+      sec.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+  }
+
+  // ================= QUIZ =================
+  function checkAnswer(btn, correct) {
+    if (correct) {
+      btn.style.background = "green";
+      alert("Jawaban Benar!");
+    } else {
+      btn.style.background = "red";
+      alert("Jawaban Salah!");
+    }
+  }
+
+</script>
+
+</body>
+</html>
